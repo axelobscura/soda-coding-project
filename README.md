@@ -1,68 +1,33 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Create a React Project in Typescript the animates the following: 
 
-## Available Scripts
+1) On page load, an HTTP request is made to a static URL coding-project.imtlab.io/seed (this URL is not publicly accessible) that returns a JSON response 
+that seeds the animation. An example of the JSON response is provided in example.json.
 
-In the project directory, you can run:
+2) As per the seed, an m x n grid of cells is to be rendered with every cell assigned a color matching the value
+specified in the seed. This sets the initial state for the animation.
+    - 0 (dead) = #a3a3a3
+    - 1 (sad) = #5daaff
+    - 2 (happy) = #2cb48a
 
-### `yarn start`
+3) The animation starts by clicking a "Start" button, which becomes "Pause" after being clicked.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+4) The animation is stateful and is performed with discrete steps. Each cell has up to 8 neighbors, which are those 
+that adjacent including the diagonals To transition from step i to i + 1 each cell is evaluated according to the 
+following rules:
+    - Any sad or happy cell with a combined total of exactly two or three sad or happy neighbours survives.
+    - Any dead cell with exactly three sad neighbors becomes a sad cell.
+    - Any dead cell with exactly two sad neighbors and 1 happy neighbor becomes a sad cell.
+    - Any dead cell with exactly one sad neighbor and 2 happy neighbors becomes a happy cell.
+    - Any dead cell with exactly 3 happy neighbors becomes a happy cell.
+    - All other cells become or remain dead. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+5) The animation proceeds through successive steps updated every second until "Pause" is clicked.
 
-### `yarn test`
+Things to Note
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- It is perfectly acceptable (if not encouraged) to leverage public packages or reuse code from online sources e.g. 
+StackOverflow. However, anything that you do not author must be attributed.
+- Be prepared to discuss your code and possible extensions during an interview.
+- The goal is that a draft of this project can be completed in an approximately 4 hour timeframe. However, partial 
+submissions may be acceptable especially if you are prepared to discuss what was difficult and how these difficulties 
+could be mitigated.
