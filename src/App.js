@@ -19,7 +19,7 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>CODING PROJECT {count}</h1>
+      <h1>CODING PROJECT</h1>
       <Boton texto={textoBoton} sumar={sum} />
       {losDatos.map((cdato, index) => (
         <div className="contenedor" key={index}><Grid datos={cdato} /></div>

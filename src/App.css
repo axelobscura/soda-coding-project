@@ -48,3 +48,12 @@ button.boton {
 button.boton:hover {
   background: #000000;
 }
+.App .celda.tipo-0 {
+  background: #a3a3a3;
+}
+.App .celda.tipo-1 {
+  background: #5daaff;
+}
+.App .celda.tipo-2 {
+  background: #2cb48a;
+}

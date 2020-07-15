@@ -4,8 +4,8 @@ function Grid(props) {
     const { datos } = props;
     return (
         <>
-            {datos.map(element => (
-                <span className="celda">{element}</span>
+            {datos.map((element, index) => (
+                <span className={`celda tipo-${element}`} key={index}>{element}</span>
             ))}
         </>
     );
