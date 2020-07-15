@@ -35,3 +35,16 @@
     background: black;
 }
 
+button.boton {
+  background: red;
+  border: 0;
+  padding: 10px 20px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+button.boton:hover {
+  background: #000000;
+}
